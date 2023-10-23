@@ -5,6 +5,7 @@ class CalendarDatePicker2WithActionButtons extends StatefulWidget {
   const CalendarDatePicker2WithActionButtons({
     required this.value,
     required this.config,
+    this.displayedMonthDate,
     this.onValueChanged,
     this.onDisplayedMonthChanged,
     this.onCancelTapped,
@@ -13,6 +14,8 @@ class CalendarDatePicker2WithActionButtons extends StatefulWidget {
   }) : super(key: key);
 
   final List<DateTime?> value;
+
+  final DateTime? displayedMonthDate;
 
   /// Called when the user taps 'OK' button
   final ValueChanged<List<DateTime?>>? onValueChanged;
@@ -82,6 +85,7 @@ class _CalendarDatePicker2WithActionButtonsState
           child: CalendarDatePicker2(
             value: [..._editCache],
             config: widget.config,
+            displayedMonthDate: widget.displayedMonthDate,
             onValueChanged: (values) => _editCache = values,
             onDisplayedMonthChanged: widget.onDisplayedMonthChanged,
           ),

@@ -7,6 +7,7 @@ Future<List<DateTime?>?> showCalendarDatePicker2Dialog({
   required BuildContext context,
   required CalendarDatePicker2WithActionButtonsConfig config,
   required Size dialogSize,
+  DateTime? displayedMonthDate,
   List<DateTime?> value = const [],
   BorderRadius? borderRadius,
   bool useRootNavigator = true,
@@ -34,6 +35,7 @@ Future<List<DateTime?>?> showCalendarDatePicker2Dialog({
           CalendarDatePicker2WithActionButtons(
             value: value,
             config: config.copyWith(openedFromDialog: true),
+            displayedMonthDate: displayedMonthDate,
           ),
         ],
       ),
